@@ -153,4 +153,4 @@ JetBrains Mono (mono).
 
 cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d --build api
 
-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
+https://nachricht.co/a9ClwIfIZYnliBdF_O9zB1FU6IeC9dDak
