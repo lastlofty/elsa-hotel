@@ -168,5 +168,11 @@ https://onetimelink.ru/8xA3hZm3YCg#QbjH5V3sEWlyEF1M-tQMmQYsw8rlZzuLKPrI9tpYFD8
 
 cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d --build api
 
-https://onetimelink.ru/n0dAN9S27fw#qbNO3n9Tt-aKsK1esPggRJyEdMGmrjC6HYzsziVoiHk
+cat /etc/systemd/system/ollama.service.d/override.conf
+
+ollama ps
+
+grep -E "MAP_MODEL|MAX_WORKERS" ~/docaudit/.env 2>/dev/null; echo "(пусто = не задано, берутся дефолты кода)"
+
+
 
