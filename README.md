@@ -163,3 +163,7 @@ curl -s http://localhost:8000/health
 git config --global credential.helper store
 
 https://onetimelink.ru/8xA3hZm3YCg#QbjH5V3sEWlyEF1M-tQMmQYsw8rlZzuLKPrI9tpYFD8
+
+
+
+cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d --build api
