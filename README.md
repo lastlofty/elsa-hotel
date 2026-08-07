@@ -159,3 +159,6 @@ docker compose -f compose.218.yml up -d --build api
 docker compose -f compose.218.yml logs --tail 30 api
 
 curl -s http://localhost:8000/health
+
+
+https://onetimelink.ru/8xA3hZm3YCg#QbjH5V3sEWlyEF1M-tQMmQYsw8rlZzuLKPrI9tpYFD8
