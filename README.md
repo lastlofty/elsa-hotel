@@ -150,6 +150,12 @@ Dark theme only. Palette: gold `#d4af37`, emerald `#2d5e3e`, ink `#0a0d12`,
 cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
-cd ~/docaudit && ls compose*.yml
+git pull --ff-only
 
-docker inspect docaudit-api-1 --format '{{index .Config.Labels "com.docker.compose.project.config_files"}}'
+git log --oneline -3
+
+docker compose -f compose.218.yml up -d --build api
+
+docker compose -f compose.218.yml logs --tail 30 api
+
+curl -s http://localhost:8000/health
