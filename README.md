@@ -175,4 +175,4 @@ ollama ps
 grep -E "MAP_MODEL|MAX_WORKERS" ~/docaudit/.env 2>/dev/null; echo "(пусто = не задано, берутся дефолты кода)"
 
 
-
+echo "=== GPU ===" && nvidia-smi --query-gpu=name,memory.total,memory.used,memory.free,utilization.gpu,driver_version --format=csv && echo "=== CPU ===" && lscpu | grep -E "Model name|CPU\(s\)|Thread|Core" && echo "=== RAM ===" && free -h && echo "=== DISK ===" && df -h / /home 2>/dev/null && echo "=== OS ===" && uname -a
