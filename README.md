@@ -150,10 +150,8 @@ Dark theme only. Palette: gold `#d4af37`, emerald `#2d5e3e`, ink `#0a0d12`,
 cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
-curl -s -c /tmp/da_cookies -X POST http://localhost:8000/login --data-urlencode "username=admin" --data-urlencode "password=v3QLpSJF6l9n" -o /dev/null
+sudo nano /etc/systemd/system/ollama.service.d/override.conf
+sudo systemctl daemon-reload
+sudo systemctl restart ollama
+systemctl show ollama -p Environment
 
-curl -s -b /tmp/da_cookies -F "file=@demo/ТЕСТ_документ_для_ИИ.txt" http://localhost:8000/chat/attach
-
-curl -s -X POST http://localhost:8000/chat -b /tmp/da_cookies -H "Content-Type: application/json" -d '{"message":"сделай аудит рисков","conversation_id":ПОДСТАВЬТЕ}'
-
-curl -s http://localhost:8000/jobs/ID -b /tmp/da_cookies
