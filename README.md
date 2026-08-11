@@ -150,10 +150,12 @@ Dark theme only. Palette: gold `#d4af37`, emerald `#2d5e3e`, ink `#0a0d12`,
 cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
-cat ~/docaudit/.env | grep -E "OLLAMA_MODEL|MAP_MODEL"
+curl -s -c /tmp/da_cookies -X POST http://localhost:8000/login --data-urlencode "username=admin" --data-urlencode "password=demo1234" -o /dev/null -w "login: %{http_code}\n"
 
-cat /etc/systemd/system/ollama.service.d/override.conf
+
+curl -s -b /tmp/da_cookies -F "file=@demo/ТЕСТ_документ_для_ИИ.txt" http://localhost:8000/chat/attach
+
+
+curl -s http://localhost:8000/jobs/ПОДСТАВЬТЕ_ID
 
 ollama ps
-
-curl -s http://localhost:8000/health
