@@ -151,3 +151,10 @@ cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
 curl -s -X POST http://localhost:8000/chat -b /tmp/da_cookies -H "Content-Type: application/json" -d '{"message":"Что написано в этом документе про пароли сотрудников?","conversation_id":8}'
+
+
+cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d --force-recreate api
+
+
+nano ~/docaudit/.env
+
