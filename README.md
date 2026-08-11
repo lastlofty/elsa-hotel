@@ -150,16 +150,10 @@ Dark theme only. Palette: gold `#d4af37`, emerald `#2d5e3e`, ink `#0a0d12`,
 cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
-sudo nano /etc/systemd/system/ollama.service.d/override.conf
+cat ~/docaudit/.env | grep -E "OLLAMA_MODEL|MAP_MODEL"
 
-[Service]
-Environment="OLLAMA_CONTEXT_LENGTH=16384" "OLLAMA_FLASH_ATTENTION=1" "OLLAMA_KV_CACHE_TYPE=q8_0" "OLLAMA_KEEP_ALIVE=-1" "OLLAMA_NUM_PARALLEL=4"
-
-sudo systemctl daemon-reload && sudo systemctl restart ollama
-
-
-cd ~/docaudit && docker compose -f compose.218.yml up -d --force-recreate api
+cat /etc/systemd/system/ollama.service.d/override.conf
 
 ollama ps
-curl -s http://localhost:8000/health
 
+curl -s http://localhost:8000/health
