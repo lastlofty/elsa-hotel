@@ -150,29 +150,16 @@ Dark theme only. Palette: gold `#d4af37`, emerald `#2d5e3e`, ink `#0a0d12`,
 cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
-git pull --ff-only
+sudo nano /etc/systemd/system/ollama.service.d/override.conf
 
-git log --oneline -3
+[Service]
+Environment="OLLAMA_CONTEXT_LENGTH=16384" "OLLAMA_FLASH_ATTENTION=1" "OLLAMA_KV_CACHE_TYPE=q8_0" "OLLAMA_KEEP_ALIVE=-1" "OLLAMA_NUM_PARALLEL=4"
 
-docker compose -f compose.218.yml up -d --build api
-
-docker compose -f compose.218.yml logs --tail 30 api
-
-curl -s http://localhost:8000/health
-
-git config --global credential.helper store
-
-https://onetimelink.ru/8xA3hZm3YCg#QbjH5V3sEWlyEF1M-tQMmQYsw8rlZzuLKPrI9tpYFD8
+sudo systemctl daemon-reload && sudo systemctl restart ollama
 
 
-
-cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d --build api
-
-cat /etc/systemd/system/ollama.service.d/override.conf
+cd ~/docaudit && docker compose -f compose.218.yml up -d --force-recreate api
 
 ollama ps
+curl -s http://localhost:8000/health
 
-grep -E "MAP_MODEL|MAX_WORKERS" ~/docaudit/.env 2>/dev/null; echo "(пусто = не задано, берутся дефолты кода)"
-
-
-echo "=== GPU ===" && nvidia-smi --query-gpu=name,memory.total,memory.used,memory.free,utilization.gpu,driver_version --format=csv && echo "=== CPU ===" && lscpu | grep -E "Model name|CPU\(s\)|Thread|Core" && echo "=== RAM ===" && free -h && echo "=== DISK ===" && df -h / /home 2>/dev/null && echo "=== OS ===" && uname -a
