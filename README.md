@@ -155,3 +155,5 @@ curl -s -c /tmp/da_cookies -X POST http://localhost:8000/login --data-urlencode 
 curl -s -b /tmp/da_cookies -F "file=@demo/ТЕСТ_документ_для_ИИ.txt" http://localhost:8000/chat/attach
 
 curl -s -X POST http://localhost:8000/chat -b /tmp/da_cookies -H "Content-Type: application/json" -d '{"message":"сделай аудит рисков","conversation_id":ПОДСТАВЬТЕ}'
+
+curl -s http://localhost:8000/jobs/ID -b /tmp/da_cookies
