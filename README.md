@@ -150,8 +150,4 @@ Dark theme only. Palette: gold `#d4af37`, emerald `#2d5e3e`, ink `#0a0d12`,
 cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
-curl -s http://localhost:8000/jobs/10 -b /tmp/da_cookies
-
-curl -s -X POST http://localhost:8000/chat -b /tmp/da_cookies -H "Content-Type: application/json" -d '{"message":"привет, как дела","conversation_id":8}'
-
-ollama ps --no-pager
+curl -s -X POST http://localhost:8000/chat -b /tmp/da_cookies -H "Content-Type: application/json" -d '{"message":"Что написано в этом документе про пароли сотрудников?","conversation_id":8}'
