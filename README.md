@@ -150,8 +150,4 @@ Dark theme only. Palette: gold `#d4af37`, emerald `#2d5e3e`, ink `#0a0d12`,
 cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
-sudo nano /etc/systemd/system/ollama.service.d/override.conf
-sudo systemctl daemon-reload
-sudo systemctl restart ollama
-systemctl show ollama -p Environment
-
+curl -s -X POST http://localhost:8000/chat -b /tmp/da_cookies -H "Content-Type: application/json" -d '{"message":"сделай аудит рисков","conversation_id":8}'
