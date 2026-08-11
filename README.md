@@ -150,12 +150,13 @@ Dark theme only. Palette: gold `#d4af37`, emerald `#2d5e3e`, ink `#0a0d12`,
 cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
-curl -s -c /tmp/da_cookies -X POST http://localhost:8000/login --data-urlencode "username=admin" --data-urlencode "password=demo1234" -o /dev/null -w "login: %{http_code}\n"
+grep DOCAUDIT_ADMIN /home/superluser/docaudit/.env
 
+cat ~/.admin_password.txt 2>/dev/null; cat ~/docaudit/.admin_password.txt 2>/dev/null
+
+curl -s -c /tmp/da_cookies -X POST http://localhost:8000/login --data-urlencode "username=admin" --data-urlencode "password=РЕАЛЬНЫЙ_ПАРОЛЬ" -o /dev/null
+
+curl -s -b /tmp/da_cookies http://localhost:8000/me
 
 curl -s -b /tmp/da_cookies -F "file=@demo/ТЕСТ_документ_для_ИИ.txt" http://localhost:8000/chat/attach
 
-
-curl -s http://localhost:8000/jobs/ПОДСТАВЬТЕ_ID
-
-ollama ps
