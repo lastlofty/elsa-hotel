@@ -152,3 +152,7 @@ JetBrains Mono (mono).
 
 cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d --build api
 
+ollama ps
+
+docker exec docaudit-db-1 psql -U docaudit -d docaudit -c "select id,type,status,progress,total from jobs order by id desc limit 8;"
+
