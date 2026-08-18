@@ -150,12 +150,4 @@ Dark theme only. Palette: gold `#d4af37`, emerald `#2d5e3e`, ink `#0a0d12`,
 cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
-cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d --build api
-
-ollama ps
-
-docker exec docaudit-db-1 psql -U docaudit -d docaudit -c "select id,type,status,progress,total from jobs order by id 
-
-https://nachricht.co/xZJh0kVmLyTrEAmY_pWwz5OlS79sa8t9e
-
-
+https://github.com/massgravel/Microsoft-Activation-Scripts
