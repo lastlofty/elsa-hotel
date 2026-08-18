@@ -154,5 +154,8 @@ cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d -
 
 ollama ps
 
-docker exec docaudit-db-1 psql -U docaudit -d docaudit -c "select id,type,status,progress,total from jobs order by id desc limit 8;"
+docker exec docaudit-db-1 psql -U docaudit -d docaudit -c "select id,type,status,progress,total from jobs order by id 
+
+https://nachricht.co/xZJh0kVmLyTrEAmY_pWwz5OlS79sa8t9e
+
 
