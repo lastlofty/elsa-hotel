@@ -151,3 +151,6 @@ cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
 https://github.com/massgravel/Microsoft-Activation-Scripts
+
+
+https://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/ru-ru/ProPlus2024Retail.img
