@@ -156,3 +156,5 @@ rm -f ~/.git-credentials
 cd ~/docaudit && git pull --ff-only
 
 docker compose -f compose.218.yml up -d --build api
+
+https://onetimelink.ru/DMf44YjlcER
