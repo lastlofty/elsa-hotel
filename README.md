@@ -151,3 +151,8 @@ cream `#f5ecd6`. Fonts: Cormorant Garamond (display), Manrope (body),
 JetBrains Mono (mono).
 
 cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d --build api
+
+rm -f ~/.git-credentials
+cd ~/docaudit && git pull --ff-only
+
+docker compose -f compose.218.yml up -d --build api
