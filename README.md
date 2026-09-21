@@ -155,8 +155,10 @@ cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d -
 rm -f ~/.git-credentials
 cd ~/docaudit && git pull --ff-only
 
-docker compose -f compose.218.yml up -d --build api
+nslookup ai-model.taile4a0f3.ts.net 8.8.8.8
 
-tailscale serve status
+sudo tailscale serve reset
 
-curl -skI https://ai-model.taile4a0f3.ts.net/login
+sudo tailscale funnel --bg 8000
+
+tailscale funnel status
