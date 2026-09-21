@@ -152,13 +152,8 @@ JetBrains Mono (mono).
 
 cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d --build api
 
-rm -f ~/.git-credentials
-cd ~/docaudit && git pull --ff-only
+curl -s -c /tmp/c -X POST http://localhost:8000/login --data-urlencode "username=admin" --data-urlencode "password=<пароль_админа>" -o /dev/null
 
-nslookup ai-model.taile4a0f3.ts.net 8.8.8.8
+curl -s -b /tmp/c -F "file=@laws/УК_РФ_бытовые_составы.txt" "http://localhost:8000/ingest?doc_type=law"
 
-sudo tailscale serve reset
-
-sudo tailscale funnel --bg 8000
-
-tailscale funnel status
+curl -s -b /tmp/c -F "file=@laws/КоАП_РФ_бытовые_составы.txt" "http://localhost:8000/ingest?doc_type=law"
