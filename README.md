@@ -152,8 +152,11 @@ JetBrains Mono (mono).
 
 cd ~/docaudit && git pull --ff-only && docker compose -f compose.218.yml up -d --build api
 
-curl -s -c /tmp/c -X POST http://localhost:8000/login --data-urlencode "username=admin" --data-urlencode "password=<пароль_админа>" -o /dev/null
+BASE=https://ai-model.taile4a0f3.ts.net
+curl -s -c /tmp/c -X POST $BASE/login --data-urlencode "username=admin" --data-urlencode "password=v3QLpSJF6l9n" -o /dev/null
 
-curl -s -b /tmp/c -F "file=@laws/УК_РФ_бытовые_составы.txt" "http://localhost:8000/ingest?doc_type=law"
+curl -s -b /tmp/c $BASE/me
 
-curl -s -b /tmp/c -F "file=@laws/КоАП_РФ_бытовые_составы.txt" "http://localhost:8000/ingest?doc_type=law"
+curl -s -b /tmp/c -F "file=@laws/УК_РФ_бытовые_составы.txt" "$BASE/ingest?doc_type=law"
+
+curl -s -b /tmp/c -F "file=@laws/КоАП_РФ_бытовые_составы.txt" "$BASE/ingest?doc_type=law"
