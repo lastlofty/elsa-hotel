@@ -161,3 +161,11 @@ https://onetimelink.ru/DMf44YjlcER
 
 
 http://ai-model.taile4a0f3.ts.net/
+
+
+cd ~/docaudit && docker compose -f compose.218.yml ps
+
+
+docker compose -f compose.218.yml logs --tail 40 api
+
+curl -sI http://localhost:8000/login
