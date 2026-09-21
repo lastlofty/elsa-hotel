@@ -157,15 +157,6 @@ cd ~/docaudit && git pull --ff-only
 
 docker compose -f compose.218.yml up -d --build api
 
-https://onetimelink.ru/DMf44YjlcER
+tailscale serve status
 
-
-http://ai-model.taile4a0f3.ts.net/
-
-
-cd ~/docaudit && docker compose -f compose.218.yml ps
-
-
-docker compose -f compose.218.yml logs --tail 40 api
-
-curl -sI http://localhost:8000/login
+curl -skI https://ai-model.taile4a0f3.ts.net/login
